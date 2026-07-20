@@ -1,13 +1,9 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<title>Witness — Witnesses to History</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,31 +13,11 @@
   ::selection { background: #B45309; color: #F7F3EE; }
   @keyframes wv-fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 </style>
-<script src="./image-slot.js"></script>
-</helmet>
-<sc-if value="{{ locked }}" hint-placeholder-val="{{ true }}">
-  <!-- ═══════════════ PASSWORD GATE ═══════════════ -->
-  <div style="min-height:100vh;background:#1C1917;font-family:'Inter',sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 24px;text-align:center;">
-    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
-      <div style="display:flex;align-items:center;gap:13px;">
-        <span style="font-family:'Playfair Display',serif;color:#F7F3EE;font-size:38px;letter-spacing:0.28em;font-weight:600;">WITNESS</span>
-        <span style="width:6px;height:6px;border-radius:50%;background:#B45309;display:inline-block;"></span>
-      </div>
-      <div style="color:#E0913A;font-size:13px;letter-spacing:0.42em;text-transform:uppercase;">Witnesses to History</div>
-    </div>
-    <form onSubmit="{{ onSubmit }}" style="margin-top:52px;display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:360px;">
-      <div style="color:rgba(247,243,238,0.5);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:4px;">By invitation</div>
-      <input ref="{{ setInputRef }}" type="password" placeholder="Enter password" aria-label="Password" style="width:100%;background:rgba(247,243,238,0.04);border:1px solid rgba(247,243,238,0.2);border-radius:10px;padding:15px 18px;color:#F7F3EE;font-family:'Inter',sans-serif;font-size:16px;letter-spacing:0.02em;outline:none;text-align:center;" style-focus="border-color:#B45309;" />
-      <button type="submit" style="width:100%;background:#B45309;border:none;border-radius:10px;padding:15px 18px;color:#F9F5F0;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;" style-hover="background:#9A4708;">Enter</button>
-      <sc-if value="{{ hasError }}" hint-placeholder-val="{{ false }}">
-        <div style="margin-top:8px;color:rgba(247,243,238,0.7);font-size:14.5px;line-height:1.55;max-width:340px;">This preview is by invitation. Contact <span style="color:#E0913A;">rufus@witnesslives.com</span> to request access.</div>
-      </sc-if>
-    </form>
-  </div>
-</sc-if>
-<sc-if value="{{ unlocked }}" hint-placeholder-val="{{ false }}">
+</head>
+<body>
 <div style="font-family:'Inter',sans-serif;background:#1C1917;animation:wv-fade 0.7s ease both;">
-  <!-- ═══════════════ SECTION 1 — HERO ═══════════════ -->
+
+  <!-- HERO -->
   <section style="position:relative;min-height:94vh;background:#1C1917;overflow:hidden;display:flex;flex-direction:column;justify-content:center;">
     <img src="assets/hero.png" alt="A present-day man among his 1800s New England ancestors by candlelight" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;" />
     <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,0.66) 0%,rgba(20,17,15,0.15) 32%,rgba(20,17,15,0.28) 58%,rgba(20,17,15,0.9) 100%);"></div>
@@ -55,7 +31,8 @@
     </div>
     <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(180,83,9,0) 0%,#B45309 50%,rgba(180,83,9,0) 100%);z-index:2;"></div>
   </section>
-  <!-- ═══════════════ SECTION 2 — THE PROBLEM ═══════════════ -->
+
+  <!-- THE PROBLEM -->
   <section style="background:#F7F3EE;padding:clamp(72px,10vw,140px) clamp(24px,6vw,96px);">
     <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(48px,6vw,96px);align-items:start;">
       <div>
@@ -69,7 +46,8 @@
       </div>
     </div>
   </section>
-  <!-- ═══════════════ SECTION 3 — WHAT IT DOES ═══════════════ -->
+
+  <!-- WHAT IT DOES -->
   <section style="background:#1C1917;padding:clamp(72px,10vw,140px) clamp(24px,6vw,96px);">
     <div style="max-width:1280px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:clamp(48px,6vw,80px);">
@@ -110,7 +88,8 @@
       </div>
     </div>
   </section>
-  <!-- ═══════════════ SECTION 4 — THE EXPERIENCE ═══════════════ -->
+
+  <!-- THE EXPERIENCE -->
   <section style="background:#F7F3EE;padding:clamp(72px,10vw,140px) clamp(24px,6vw,96px);">
     <div style="max-width:1280px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:clamp(48px,6vw,80px);">
@@ -119,33 +98,25 @@
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,3.5vw,48px);">
         <div style="display:flex;flex-direction:column;gap:18px;">
-          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;">
-            <span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">01</span>
-            <span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The First Revelation</span>
-          </div>
+          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;"><span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">01</span><span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The First Revelation</span></div>
           <div style="display:inline-flex;align-self:flex-start;align-items:baseline;gap:10px;background:#1C1917;border-radius:10px;padding:12px 18px;"><span style="font-family:'Playfair Display',serif;font-size:26px;color:#E0913A;font-weight:600;">1,046</span><span style="font-size:13px;color:rgba(247,243,238,0.7);">alive during King Philip's War</span></div>
           <p style="margin:0;font-size:16.5px;line-height:1.68;color:#57534E;">You ask one question and the answer reorders how you see your family — a thousand people who lived through a moment you only knew from a history book, each with a name, an age, a place.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:18px;">
-          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;">
-            <span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">02</span>
-            <span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The Field Moment</span>
-          </div>
+          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;"><span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">02</span><span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The Field Moment</span></div>
           <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:9px;background:#1C1917;border-radius:10px;padding:12px 18px;"><span style="width:9px;height:9px;border-radius:50%;background:#16A34A;box-shadow:0 0 0 4px rgba(22,163,74,0.3);"></span><span style="font-size:13px;color:rgba(247,243,238,0.85);letter-spacing:0.08em;">GPS match · 38m · North Burial Ground</span></div>
           <p style="margin:0;font-size:16.5px;line-height:1.68;color:#57534E;">You are standing in a cemetery you drove past a hundred times. Your phone confirms what you never suspected: a fourth great-grandmother is buried thirty-eight meters from where you stand.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:18px;">
-          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;">
-            <span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">03</span>
-            <span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The Ancestor Encounter</span>
-          </div>
+          <div style="align-self:flex-start;display:inline-flex;align-items:baseline;gap:14px;"><span style="font-family:'Playfair Display',serif;font-size:34px;color:#B45309;font-weight:600;">03</span><span style="font-family:'Playfair Display',serif;font-size:25px;color:#1C1917;font-weight:600;">The Ancestor Encounter</span></div>
           <div style="display:inline-flex;align-self:flex-start;align-items:baseline;gap:10px;background:#1C1917;border-radius:10px;padding:12px 18px;"><span style="font-family:'Playfair Display',serif;font-size:17px;color:#F7F3EE;">Catherine M. Scott</span><span style="font-size:13px;color:rgba(247,243,238,0.6);">1617–1687</span></div>
           <p style="margin:0;font-size:16.5px;line-height:1.68;color:#57534E;">A name in a database becomes a life. A warm, readable biography — where she was born, what she believed, what it cost her — and suddenly an ancestor is a person you feel you have met.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- ═══════════════ SECTION 5 — WHAT MAKES IT DIFFERENT ═══════════════ -->
+
+  <!-- WHAT MAKES IT DIFFERENT -->
   <section style="background:#1C1917;padding:clamp(72px,10vw,140px) clamp(24px,6vw,96px);">
     <div style="max-width:1240px;margin:0 auto;">
       <div style="margin-bottom:clamp(48px,6vw,76px);max-width:820px;">
@@ -176,7 +147,8 @@
       </div>
     </div>
   </section>
-  <!-- ═══════════════ THE VISION — FAMILY STREET VIEW ═══════════════ -->
+
+  <!-- THE VISION — FAMILY STREET VIEW -->
   <section style="position:relative;background:#1C1917;overflow:hidden;padding:clamp(84px,11vw,156px) clamp(24px,6vw,96px);">
     <img src="assets/hero.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;opacity:0.22;" />
     <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(180,83,9,0.10),rgba(28,25,23,0.4) 55%),linear-gradient(180deg,#1C1917 0%,rgba(28,25,23,0.72) 40%,#1C1917 100%);"></div>
@@ -201,21 +173,18 @@
       <div style="margin-top:clamp(36px,4vw,52px);font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2vw,24px);color:#B45309;">A proof of concept exists. The production version ships shortly after launch.</div>
     </div>
   </section>
-  <!-- ═══════════════ SECTION 6 — ABOUT THE PROJECT ═══════════════ -->
+
+  <!-- ABOUT THE PROJECT -->
   <section style="background:#F7F3EE;padding:clamp(72px,10vw,140px) clamp(24px,6vw,96px);">
-    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(40px,5vw,72px);align-items:center;">
-      <div style="max-width:150px;justify-self:center;">
-        <image-slot id="rufus" style="width:150px;height:150px;" shape="circle" placeholder="Optional photo"></image-slot>
-      </div>
-      <div style="grid-column:span 2;min-width:0;">
-        <div style="color:#B45309;font-size:13px;letter-spacing:0.34em;text-transform:uppercase;font-weight:500;margin-bottom:24px;">About the Project</div>
-        <p style="margin:0;font-family:'Playfair Display',serif;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.4;color:#1C1917;font-weight:500;">I'm Rufus Howe. I've spent years building a family tree of over 5,000 people — and kept running into the same frustration: the tools are excellent for building, and poor for discovering.</p>
-        <p style="margin:22px 0 0;font-size:clamp(16px,1.3vw,18px);line-height:1.7;color:#57534E;">Witness is my attempt to fix that. It's built on my own family's GEDCOM file, validated against real data, and designed for people who take their family history seriously.</p>
-        <div style="margin-top:26px;color:#B45309;font-size:15px;letter-spacing:0.06em;">witnesslives.com</div>
-      </div>
+    <div style="max-width:1080px;margin:0 auto;">
+      <div style="color:#B45309;font-size:13px;letter-spacing:0.34em;text-transform:uppercase;font-weight:500;margin-bottom:24px;">About the Project</div>
+      <p style="margin:0;font-family:'Playfair Display',serif;font-size:clamp(1.35rem,2.4vw,2rem);line-height:1.4;color:#1C1917;font-weight:500;">I'm Rufus Howe. I've spent years building a family tree of over 5,000 people — and kept running into the same frustration: the tools are excellent for building, and poor for discovering.</p>
+      <p style="margin:22px 0 0;font-size:clamp(16px,1.3vw,18px);line-height:1.7;color:#57534E;">Witness is my attempt to fix that. It's built on my own family's GEDCOM file, validated against real data, and designed for people who take their family history seriously.</p>
+      <div style="margin-top:26px;color:#B45309;font-size:15px;letter-spacing:0.06em;">witnesslives.com</div>
     </div>
   </section>
-  <!-- ═══════════════ SECTION 7 — WHAT I'M LOOKING FOR ═══════════════ -->
+
+  <!-- WHAT I'M LOOKING FOR -->
   <section style="background:#1C1917;padding:clamp(80px,10vw,148px) clamp(24px,6vw,96px);">
     <div style="max-width:1120px;margin:0 auto;text-align:center;">
       <div style="color:#E0913A;font-size:13px;letter-spacing:0.34em;text-transform:uppercase;font-weight:500;margin-bottom:26px;">What I'm Looking For</div>
@@ -246,40 +215,7 @@
       </div>
     </div>
   </section>
+
 </div>
-</sc-if>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { unlocked: false, error: '' };
-  componentDidMount() {
-    try {
-      if (localStorage.getItem('witness_preview_unlocked') === '1') {
-        this.setState({ unlocked: true });
-      }
-    } catch (e) {}
-  }
-  renderVals() {
-    const PASSWORD = 'witnesses';
-    return {
-      unlocked: this.state.unlocked,
-      locked: !this.state.unlocked,
-      hasError: !!this.state.error,
-      setInputRef: (el) => { this._input = el; },
-      onSubmit: (e) => {
-        if (e && e.preventDefault) e.preventDefault();
-        const val = (this._input && this._input.value ? this._input.value : '').trim().toLowerCase();
-        if (val === PASSWORD) {
-          try { localStorage.setItem('witness_preview_unlocked', '1'); } catch (_) {}
-          this.setState({ unlocked: true, error: '' });
-          try { window.scrollTo(0, 0); } catch (_) {}
-        } else {
-          this.setState({ error: 'invalid' });
-        }
-      }
-    };
-  }
-}
-</script>
 </body>
 </html>
